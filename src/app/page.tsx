@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 import { Server } from '@/widgets';
-import { ConfigMonitor } from '@/features';
-import { ServerConfigProvider } from '@/shared';
+import { ConfigMonitor, ServerConfigMonitor } from '@/features';
+import { ServerConfigProvider, Suspendable } from '@/shared';
 
 import styles from "./page.module.css";
 
@@ -18,6 +18,9 @@ export default function Home() {
         <ServerConfigProvider>
           <ConfigMonitor />
           <Server />
+          <Suspendable>
+            <ServerConfigMonitor />
+          </Suspendable>
         </ServerConfigProvider>
     </main>
   );

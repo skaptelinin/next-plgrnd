@@ -1,4 +1,4 @@
-import { sleep } from '@/shared';
+import { sleep, Suspendable } from '@/shared';
 import { Client } from '@/widgets/CombinedComp/Client';
 import { ServerChild } from '@/widgets/CombinedComp/ServerChild';
 
@@ -9,7 +9,9 @@ export const Server = async () => {
         <div>
             I am big server component
             <Client initCount={10}>
-                <ServerChild />
+                <Suspendable>
+                    <ServerChild />
+                </Suspendable>
             </Client>
         </div>
     )
