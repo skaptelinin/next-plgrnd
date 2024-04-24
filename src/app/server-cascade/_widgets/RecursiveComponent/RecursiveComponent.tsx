@@ -8,7 +8,7 @@ export interface Tree {
   children?: Tree[];
 }
 
-export const RecursiveComponent: SFC<{ tree: Tree }> = suspendable(async ({ tree }) => {
+export const RecursiveComponent: SFC<{ tree: Tree }> = async ({ tree }) => {
   const { delay, children, title } = tree;
   await sleep(delay);
 
@@ -22,4 +22,4 @@ export const RecursiveComponent: SFC<{ tree: Tree }> = suspendable(async ({ tree
       ))}
     </div>
   );
-});
+};
