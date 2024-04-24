@@ -1,0 +1,5 @@
+.preview {
+  padding: 8px;
+  border: 1px solid var(--border-hex);
+  border-radius: 4px;
+}
