@@ -4,7 +4,7 @@ import { suspendable } from '../ui/suspendable';
 import { ClientConfigProvider } from './ClientConfigProvider';
 import { getCachedConfig } from './getServerConfig';
 
-const SConfigProvider = async ({ children }: {
+export const ServerConfigProvider = suspendable(async ({ children }: {
     children: ReactNode,
 }) => {
   const config = await getCachedConfig();
@@ -14,6 +14,4 @@ const SConfigProvider = async ({ children }: {
       {children}
     </ClientConfigProvider>
   );
-};
-
-export const ServerConfigProvider = suspendable(SConfigProvider);
+});
