@@ -1,5 +1,5 @@
 import { sleep } from '@/shared';
-import { Client } from '@/app/combined-page/_widgets/CombinedComp/Client/Client';
+import { ClientPart } from '@/app/combined-page/_widgets/CombinedComp/ClientPart/ClientPart';
 import { ServerChild } from '@/app/combined-page/_widgets/CombinedComp/ServerChild';
 
 import styles from './CombinedComp.module.css';
@@ -10,9 +10,9 @@ export const CombinedComp = async () => {
   return (
     <div className={styles.wrapper}>
       I am mixed component
-      <Client initCount={10}>
+      <ClientPart initCount={10}>
         <ServerChild />
-      </Client>
+      </ClientPart>
     </div>
   )
 }
