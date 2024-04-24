@@ -1,16 +1,14 @@
-import { getCachedConfig, PropertyRow, sleep } from '@/shared';
+import { getCachedConfig, sleep, suspendable } from '@/shared';
 
-export const ServerConfigMonitor = async () => {
-    await sleep(2_000);
-    const { lang, theme } = await getCachedConfig();
+import { ConfigMonitorUI } from '../_ConfigMonitorUI/ConfigMonitorUI';
 
-    return (
-        <div>
-            <h3>
-                Server config monitor
-            </h3>
-            <PropertyRow label="Language" value={lang} />
-            <PropertyRow label="Theme" value={theme} />
-        </div>
-    );
+const SConfigMonitor = async () => {
+  await sleep(2_000);
+  const config = await getCachedConfig();
+
+  return (
+    <ConfigMonitorUI {...config} componentType="Server" />
+  );
 };
+
+export const ServerConfigMonitor = suspendable(SConfigMonitor);

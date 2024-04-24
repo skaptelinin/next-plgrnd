@@ -1,2 +1,2 @@
 export { PropertyRow } from './PropertyRow';
-export { Suspendable } from './Suspendable';
+export { suspendable } from './suspendable';

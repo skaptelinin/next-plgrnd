@@ -1,0 +1,1 @@
+export { CombinedComp } from './CombinedComp';

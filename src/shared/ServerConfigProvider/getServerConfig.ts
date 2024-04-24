@@ -4,7 +4,7 @@ import { Config, type Lang, randomChoice, sleep, type Theme } from '@/shared';
 
 export const generateConfig = async (): Promise<Config> => {
     console.log('call generateConfig', Date.now());
-    await sleep(500);
+    await sleep(1_500);
     return ({
         theme: randomChoice<Theme>(['light', 'dark', 'system']),
         lang: randomChoice<Lang>(['ru', 'en']),

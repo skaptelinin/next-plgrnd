@@ -1,27 +1,9 @@
-import Image from "next/image";
+import { type FC } from 'react';
 
-import { Server } from '@/widgets';
-import { ConfigMonitor, ServerConfigMonitor } from '@/features';
-import { ServerConfigProvider, Suspendable } from '@/shared';
+const Home: FC = () => (
+  <h1>
+    Hey guys!
+  </h1>
+);
 
-import styles from "./page.module.css";
-
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-      </div>
-        <ServerConfigProvider>
-          <ConfigMonitor />
-          <Server />
-          <Suspendable>
-            <ServerConfigMonitor />
-          </Suspendable>
-        </ServerConfigProvider>
-    </main>
-  );
-}
+export default Home;
