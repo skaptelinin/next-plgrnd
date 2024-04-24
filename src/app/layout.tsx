@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import { Header } from '@/widgets';
-import { ServerConfigProvider } from '@/shared';
 
 import styles from './layout.module.css';
 import './globals.css';
@@ -24,9 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         <main className={styles.main}>
-          <ServerConfigProvider>
-            {children}
-          </ServerConfigProvider>
+          {children}
         </main>
       </body>
     </html>
