@@ -1,0 +1,14 @@
+.large-lists {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40px auto;
+  grid-template-areas:
+      "title title"
+      "content-left content-right"
+;
+}
+
+.large-lists .page-title {
+  grid-area: title;
+}

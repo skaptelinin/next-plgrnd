@@ -1,6 +1,6 @@
 import { sleep } from '@/shared';
-import { ClientPart } from '@/app/combined-page/_widgets/CombinedComp/ClientPart/ClientPart';
-import { ServerChild } from '@/app/combined-page/_widgets/CombinedComp/ServerChild';
+import { ClientPart } from './ClientPart/ClientPart';
+import { ServerChild } from './ServerChild';
 
 import styles from './CombinedComp.module.css';
 

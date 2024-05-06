@@ -10,6 +10,7 @@ const PAGES_MAP: Record<ROUTES, string> = {
   [ROUTES.serverCascade]: 'Server cascade',
   [ROUTES.client]: 'Client page',
   [ROUTES.combinedPage]: 'Combined page',
+  [ROUTES.largeLists]: 'Large Lists',
 };
 
 export const NavBar: FC = () => (

@@ -3,4 +3,5 @@ export enum ROUTES {
   client = '/client',
   serverCascade = '/server-cascade',
   combinedPage = '/combined-page',
+  largeLists = '/large-lists',
 }

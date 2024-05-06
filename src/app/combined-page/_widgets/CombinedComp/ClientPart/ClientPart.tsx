@@ -1,9 +1,14 @@
-'use client'
-import { useState, FC, ReactElement } from 'react';
+'use client';
+import { FC, ReactElement, useMemo, useRef, useState } from 'react';
 
 import styles from './ClientPart.module.css';
 
-export const ClientPart: FC<{ initCount: number, children: ReactElement }> = ({ initCount, children }) => {
+
+
+export const ClientPart: FC<{
+  initCount: number,
+  children: ReactElement,
+}> = ({ initCount, children }) => {
   const [count, setCount] = useState<number>(initCount);
   const [visible, setVisible] = useState<boolean>(false);
 
