@@ -10,26 +10,32 @@ export interface SignupData {
   gender: Gender;
 }
 
-const generateInitData = async (): Promise<SignupData> => {
+const generateInitData = (): SignupData => ({
+  username: randomChoice(['Vasya', 'Petya', 'Dasha', 'Olya', 'John Doe', 'Sara Doe']),
+  shouldSubscribe: randomChoice([false, true]),
+  gender: randomChoice(['male', 'female', 'none']),
+});
+
+const generateInitDataAsync = async (): Promise<SignupData> => {
   await sleep(2_000);
 
-  return {
-    username: randomChoice(['Vasya', 'Petya', 'Dasha', 'Olya', 'John Doe', 'Sara Doe']),
-    shouldSubscribe: randomChoice([false, true]),
-    gender: randomChoice(['male', 'female', 'none']),
-  };
+  return generateInitData();
 };
 
-export const useSignupForm = () => {
-  const [formData, setFormData] = useState<SignupData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export const useSignupForm = (isAsync = false) => {
+  const [formData, setFormData] = useState<SignupData | null>(
+    isAsync ? null : generateInitData
+  );
+  const [isLoading, setIsLoading] = useState<boolean>(isAsync);
 
   useEffect(() => {
-    (async () => {
-      setFormData(await generateInitData());
-      setIsLoading(false);
-    })();
-  }, []);
+    if (isAsync) {
+      (async () => {
+        setFormData(await generateInitDataAsync());
+        setIsLoading(false);
+      })();
+    }
+  }, [isAsync]);
 
   const changeFormData = (newValue: Partial<SignupData>): void => {
     setFormData((value) => {

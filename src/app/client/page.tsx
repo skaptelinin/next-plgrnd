@@ -17,7 +17,7 @@ const getPageState = (isLoading: boolean, formData: SignupData | null): 'loading
 };
 
 const ClientPage: FC = () => {
-  const { isLoading, changeFormData, formData } = useSignupForm();
+  const { isLoading, changeFormData, formData } = useSignupForm(true);
 
   return {
     loading: <p>Loading...</p>,
