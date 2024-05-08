@@ -33,6 +33,8 @@ const COMPONENTS_TREE: Tree = {
   ],
 }
 
+export const revalidate = 5;
+
 const ServerCascade = () => (
   <>
     <h1>Server components cascade</h1>

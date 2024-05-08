@@ -1,5 +1,5 @@
 'use client'
-import { type FC, useMemo, useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { List } from '../_features';
 import { generateRandArray, LIST_LENGTH, type ListItem } from '../_shared';
