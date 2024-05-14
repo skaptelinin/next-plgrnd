@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { suspendable } from '../ui/suspendable';
+import { suspendable } from '@/shared/ui/suspendable';
 import { ClientConfigProvider } from './ClientConfigProvider';
 import { getCachedConfig } from './getServerConfig';
 

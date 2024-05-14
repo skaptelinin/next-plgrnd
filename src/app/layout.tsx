@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { Header } from '@/widgets';
+import { Header } from '@/widgets/Header/Header';
 
 import styles from './layout.module.css';
 import './globals.css';

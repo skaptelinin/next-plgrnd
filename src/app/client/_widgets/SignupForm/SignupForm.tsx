@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { type Gender, type SignupData } from '../../_features';
+import { type Gender, type SignupData } from '../../_features/useFormData';
 import { GenderField, Preview, SubscriptionField, UsernameField } from './_ui';
 import styles from './SignupForm.module.css';
 

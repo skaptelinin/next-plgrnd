@@ -1,4 +1,5 @@
-import { sleep, suspendable } from '@/shared';
+import { suspendable } from '@/shared/ui/suspendable';
+import { sleep } from '@/shared/utils/sleep';
 
 export const ServerChild = suspendable(async () => {
   await sleep(13_000);
@@ -6,4 +7,4 @@ export const ServerChild = suspendable(async () => {
   return (
     <h2>I&apos;m nested child</h2>
   );
-});
+}, false);

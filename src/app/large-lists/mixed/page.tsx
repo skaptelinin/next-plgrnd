@@ -2,17 +2,17 @@ import { headers } from 'next/headers';
 
 import { sleep } from '@/shared/utils/sleep';
 
-import { LargeList } from '../_widgets/LargeList/LargeList';
+import { UseClientList } from '../_widgets/UseClientList/UseClientList';
 import { generateRandArray, LIST_LENGTH } from '../_shared';
 
-const ServerList = async () => {
+const MixedList = async () => {
   console.log('headers are', headers());
   await sleep(10);
   const list = generateRandArray(LIST_LENGTH);
 
   return (
-    <LargeList listType="server" items={list} />
+    <UseClientList items={list} />
   );
 };
 
-export default ServerList;
+export default MixedList;

@@ -1,6 +1,6 @@
 import { type ChangeEvent, type FC } from 'react';
 
-import { type Gender } from '../../../../_features';
+import { type Gender } from '../../../../_features/useFormData';
 import { type FieldProps } from '../FieldProps';
 import labelStyles from '../Label.module.css';
 import styles from './GenderField.module.css';

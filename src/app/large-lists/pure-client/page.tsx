@@ -1,7 +1,7 @@
 'use client'
 import { type FC, useEffect, useState, useTransition } from 'react';
 
-import { List } from '../_features';
+import { LargeList } from '../_widgets/LargeList/LargeList';
 import { generateRandArray, LIST_LENGTH, type ListItem } from '../_shared';
 
 const ClientList: FC = () => {
@@ -17,7 +17,7 @@ const ClientList: FC = () => {
   return (
     isPending
       ? <p>Rendering...</p>
-      : <List listType="client" items={list} />
+      : <LargeList listType="pureClient" items={list} />
   );
 };
 

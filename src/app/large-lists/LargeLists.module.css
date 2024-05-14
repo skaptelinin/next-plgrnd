@@ -1,12 +1,12 @@
 .large-lists {
   display: grid;
   gap: 8px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 40px auto;
   grid-template-areas:
-      "title title"
-      "content-left content-right"
-;
+      "title title title"
+      "content-left content-center content-right"
+  ;
 }
 
 .large-lists .page-title {

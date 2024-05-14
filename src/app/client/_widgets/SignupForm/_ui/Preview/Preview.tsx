@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { type SignupData } from '../../../../_features';
+import { type SignupData } from '../../../../_features/useFormData';
 import styles from './Preview.module.css';
 
 export const Preview: FC<SignupData> = ({

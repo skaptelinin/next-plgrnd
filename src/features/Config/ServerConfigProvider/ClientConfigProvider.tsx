@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react';
 
-import type { Config } from './interfaces';
+import type { Config } from '../interfaces';
 
 const DEFAULT_CONFIG: Config = {
   theme: 'dark',

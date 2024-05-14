@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import Link from 'next/link';
 
-import { ROUTES } from '@/entities';
+import { ROUTES } from '@/entities/routes';
 
 import styles from './NavBar.module.css';
 

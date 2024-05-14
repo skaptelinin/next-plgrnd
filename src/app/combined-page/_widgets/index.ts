@@ -1,1 +1,0 @@
-export { CombinedComp } from './CombinedComp';

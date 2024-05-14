@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { randomChoice, sleep } from '@/shared';
+import { sleep } from '@/shared/utils/sleep';
+import { randomChoice } from '@/shared/utils/randomChoice';
 
 export type Gender = 'male' | 'female' | 'none';
 

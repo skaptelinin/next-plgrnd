@@ -1,10 +1,11 @@
 'use client'
 import { type FC } from 'react';
 
-import { Danger } from '@/shared';
+import { Danger } from '@/shared/ui/Danger/Danger';
+import { Loader } from '@/shared/ui/Loader/Loader';
 
-import { SignupForm } from './_widgets';
-import { useSignupForm, type SignupData } from './_features';
+import { SignupForm } from './_widgets/SignupForm/SignupForm';
+import { useSignupForm, type SignupData } from './_features/useFormData';
 
 const getPageState = (isLoading: boolean, formData: SignupData | null): 'loading' | 'error' | 'success' => {
   if (isLoading) {
@@ -20,7 +21,7 @@ const ClientPage: FC = () => {
   const { isLoading, changeFormData, formData } = useSignupForm(true);
 
   return {
-    loading: <p>Loading...</p>,
+    loading: <Loader title="Client" />,
     success: <SignupForm formData={formData as SignupData} changeForm={changeFormData} />,
     error: <Danger>Failed to load data</Danger>,
   }[getPageState(isLoading, formData)];

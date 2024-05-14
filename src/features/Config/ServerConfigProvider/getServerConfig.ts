@@ -1,6 +1,9 @@
 import { cache } from 'react';
 
-import { Config, type Lang, randomChoice, sleep, type Theme } from '@/shared';
+import { sleep } from '@/shared/utils/sleep';
+import { randomChoice } from '@/shared/utils/randomChoice';
+
+import { type Config, type Lang, type Theme } from '../interfaces';
 
 export const generateConfig = async (): Promise<Config> => {
     console.log('call generateConfig', Date.now());

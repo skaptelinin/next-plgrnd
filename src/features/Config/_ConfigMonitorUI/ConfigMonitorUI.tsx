@@ -1,6 +1,7 @@
 import { type FC } from 'react';
 
-import { type Config, PropertyRow } from '@/shared';
+import { type Config } from '../interfaces';
+import { PropertyRow } from './PropertyRow';
 
 export const ConfigMonitorUI: FC<Config & { componentType: 'Server' | 'Client' }> = ({
   componentType,

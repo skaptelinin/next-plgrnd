@@ -1,4 +1,6 @@
-import { RecursiveComponent, type Tree } from './_widgets';
+import { headers } from 'next/headers';
+
+import { RecursiveComponent, type Tree } from './_widgets/RecursiveComponent/RecursiveComponent';
 
 const COMPONENTS_TREE: Tree = {
   title: 'Root',
@@ -33,13 +35,16 @@ const COMPONENTS_TREE: Tree = {
   ],
 }
 
-export const revalidate = 5;
+// export const revalidate = 5;
 
-const ServerCascade = () => (
-  <>
-    <h1>Server components cascade</h1>
-    <RecursiveComponent tree={COMPONENTS_TREE} />
-  </>
-);
+const ServerCascade = () => {
+  console.log('headers are', headers());
+  return (
+    <>
+      <h1>Server components cascade</h1>
+      <RecursiveComponent tree={COMPONENTS_TREE} />
+    </>
+  );
+}
 
 export default ServerCascade;

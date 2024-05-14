@@ -1,14 +1,17 @@
-import { ClientConfigMonitor, ServerConfigMonitor } from '@/features';
-import { ServerConfigProvider } from '@/shared';
+import { type FC } from 'react';
 
-import { CombinedComp } from './_widgets';
+import { ClientConfigMonitor, ServerConfigMonitor, ServerConfigProvider } from '@/features/Config';
 
-const CombinedPage = () => (
-  <ServerConfigProvider>
-    <ClientConfigMonitor />
-    <ServerConfigMonitor />
-    <CombinedComp />
-  </ServerConfigProvider>
-);
+import { CombinedComp } from './_widgets/CombinedComp';
+
+const CombinedPage: FC = () => {
+  return (
+    <ServerConfigProvider>
+      <ClientConfigMonitor />
+      <ServerConfigMonitor />
+      <CombinedComp />
+    </ServerConfigProvider>
+  );
+}
 
 export default CombinedPage;

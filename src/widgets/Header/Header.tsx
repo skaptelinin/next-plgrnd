@@ -1,6 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 
-import { NavBar } from '@/features';
+import { NavBar } from '@/features/NavBar/NavBar';
 
 import styles from './Header.module.css';
 
