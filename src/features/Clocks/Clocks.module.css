@@ -1,0 +1,22 @@
+.clocks {
+  display: grid;
+  grid-template-columns: 1fr 70px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "init rerender"
+    "now rerender"
+  ;
+  gap: 4px 8px;
+}
+
+.init {
+  grid-area: init;
+}
+
+.now {
+  grid-area: now;
+}
+
+.rerender {
+  grid-area: rerender;
+}

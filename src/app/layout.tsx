@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import { Header } from '@/widgets/Header/Header';
+import { Clocks } from '@/features/Clocks/Clocks';
 
 import styles from './layout.module.css';
 import './globals.css';
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <Header headerSlot={<Clocks init={Date.now()} />} />
         <main className={styles.main}>
           {children}
         </main>
