@@ -11,6 +11,8 @@ export const Clocks: FC<{ init: number }> = ({ init }) => {
 
   const rerender = useRerender();
 
+  console.log('Clocks render');
+
   return (
     <div className={styles.clocks}>
       <p className={styles.init}>
