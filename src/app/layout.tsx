@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header headerSlot={<Clocks init={Date.now()} />} />
+        <Header headerSlot={<Clocks init={Date.now()} type="server" />} />
         <main className={styles.main}>
           {children}
         </main>

@@ -1,29 +1,12 @@
-'use client'
 import { type FC } from 'react';
 
-import dayjs from 'dayjs';
+import { ClientClocks } from './ClientClocks/ClientClocks';
+import { Date } from './Date/Date';
 
-import { useRerender, useTimer } from './hooks';
-import styles from './Clocks.module.css';
-
-export const Clocks: FC<{ init: number }> = ({ init }) => {
-  const time = useTimer(init);
-
-  const rerender = useRerender();
-
-  console.log('Clocks render');
-
-  return (
-    <div className={styles.clocks}>
-      <p className={styles.init}>
-        Init datetime: <time>{dayjs(init).format()}</time>
-      </p>
-      <p className={styles.now}>
-        Current datetime: <time>{dayjs(time).format()}</time>
-      </p>
-      <button onClick={rerender} className={styles.rerender}>
-        Rerender
-      </button>
-    </div>
-  );
-};
+export const Clocks: FC<{
+  init: number;
+  type: 'client' | 'server';
+}> = ({ init, type }) => ({
+  client: <ClientClocks init={init} />,
+  server: <p>Server clocks: <Date date={init} /></p>
+}[type]);
